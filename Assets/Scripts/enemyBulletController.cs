@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletController : MonoBehaviour
+public class enemyBulletController : MonoBehaviour
 {
     private GameObject agentObj;
     private agentController agentScript;
@@ -23,20 +23,19 @@ public class bulletController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        transform.localPosition += new Vector3(0, 10, 0) * Time.deltaTime;
+        transform.localPosition += new Vector3(0, -10, 0) * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Wall")
+        if (collision.tag == "Wall")
         {
             Destroy(this.gameObject);
-        } else if (collision.tag == "Enemy")
+        }
+        else if (collision.tag == "Player")
         {
             if (agentScript == null) { Debug.Log("Error: Agent not found."); }
-            else { agentScript.EnemyKilled(); }
-            Destroy(collision.gameObject);
+            else { agentScript.EnemyWon(); }
             Destroy(this.gameObject);
         }
     }
-    
 }

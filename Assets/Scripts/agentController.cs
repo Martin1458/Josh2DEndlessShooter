@@ -25,7 +25,7 @@ public class agentController : Agent
         for (int i = 0; i < parent.childCount; i++)
         {
             GameObject sibling = parent.GetChild(i).gameObject;
-            if (sibling.tag == "Enemy" || sibling.tag == "Bullet")
+            if (sibling.tag == "Enemy" || sibling.tag == "Bullet" || sibling.tag == "enemyBullet")
             {
                 Destroy(sibling);
             }
@@ -87,4 +87,5 @@ public class agentController : Agent
     {
         AddReward(1f);
     }
+
 }

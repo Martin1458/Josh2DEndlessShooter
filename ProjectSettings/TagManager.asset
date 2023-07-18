@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - enemySpawner
   - Enemy
+  - enemyBullet
   layers:
   - Default
   - TransparentFX
