@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # My venv
 /venv/
+
+# MlAgents results
+/results/
