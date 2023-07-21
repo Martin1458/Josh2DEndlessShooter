@@ -16,10 +16,16 @@ public class enemyController : MonoBehaviour
     // random height that the enemy hovers at
     private int randomHeight;
 
+    private bool goingDown = false;
     private void Start()
     {
         side = UnityEngine.Random.Range(0, 2) * 2 - 1;
         randomHeight = UnityEngine.Random.Range(0, 17);
+
+        //transform.localPosition = Vector3.zero;
+        //float randomOffset = UnityEngine.Random.Range(-17, 17);
+        //Vector3 newPosition = new Vector3(transform.localPosition.x + randomOffset, transform.localPosition.y, transform.localPosition.z);
+        //transform.localPosition = newPosition;
 
         // Find the Agent
         Transform parent = transform.parent;
@@ -45,15 +51,19 @@ public class enemyController : MonoBehaviour
             transform.localPosition += new Vector3(7 * side, 0, 0) * Time.deltaTime;
         }
 
-        if (Time.time > nextFire)
+        if (Time.time > nextFire && !goingDown)
         {
             nextFire = Time.time + fireRate;
-            GameObject bulletInstance = Instantiate(enemyBulletObj, transform.position, transform.rotation, transform.parent) as GameObject;
+            Instantiate(enemyBulletObj, transform.position, transform.rotation, transform.parent);
         }
 
         if (-10 < transform.localPosition.x && transform.localPosition.x < 10)
         {
-            if(UnityEngine.Random.Range(0, 1000) == 0) { side = 0; }
+            if(UnityEngine.Random.Range(0, 1000) == 0) 
+            {
+                goingDown = true;
+                side = 0; 
+            }
         }
 
     }

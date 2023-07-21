@@ -11,7 +11,7 @@ public class agentController : Agent
 {
     public float runSpeed;
     public GameObject bulletObj;
-    private float fireRate = 0.6f;
+    private float fireRate = 0.5f;
     private float nextFire = 0.0f;
     [SerializeField] private GameObject[] myBullets;
 
@@ -36,7 +36,7 @@ public class agentController : Agent
         ActionSegment<int> DiscreteActions = actionsOut.DiscreteActions;
 
         // -1 = left; 0 = stay; 1 = right
-        DiscreteActions[0] = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
+        DiscreteActions[0] = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal")) + 1;
 
         // 0 = nothing; 1 = fire
         if (Input.GetKey(KeyCode.Space))
@@ -85,7 +85,7 @@ public class agentController : Agent
     }
     public void EnemyKilled()
     {
-        AddReward(1f);
+        AddReward(2f);
     }
 
 }

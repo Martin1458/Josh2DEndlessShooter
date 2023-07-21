@@ -1,0 +1,38 @@
+{
+    "AgentsBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499996,
+                "file_path": "results\\Shooter6\\AgentsBehavior\\AgentsBehavior-499996.onnx",
+                "reward": 0.12450322646968412,
+                "creation_time": 1689699667.2138376,
+                "auxillary_file_paths": [
+                    "results\\Shooter6\\AgentsBehavior\\AgentsBehavior-499996.pt"
+                ]
+            },
+            {
+                "steps": 500034,
+                "file_path": "results\\Shooter6\\AgentsBehavior\\AgentsBehavior-500034.onnx",
+                "reward": 0.11381570524290989,
+                "creation_time": 1689699667.4437096,
+                "auxillary_file_paths": [
+                    "results\\Shooter6\\AgentsBehavior\\AgentsBehavior-500034.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500034,
+            "file_path": "results\\Shooter6\\AgentsBehavior.onnx",
+            "reward": 0.11381570524290989,
+            "creation_time": 1689699667.4437096,
+            "auxillary_file_paths": [
+                "results\\Shooter6\\AgentsBehavior\\AgentsBehavior-500034.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu117"
+    }
+}

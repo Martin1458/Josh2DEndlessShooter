@@ -1,0 +1,29 @@
+{
+    "AgentsBehavior": {
+        "checkpoints": [
+            {
+                "steps": 4948,
+                "file_path": "results\\Shooter3\\AgentsBehavior\\AgentsBehavior-4948.onnx",
+                "reward": -9.890780272107598,
+                "creation_time": 1689683854.2168844,
+                "auxillary_file_paths": [
+                    "results\\Shooter3\\AgentsBehavior\\AgentsBehavior-4948.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4948,
+            "file_path": "results\\Shooter3\\AgentsBehavior.onnx",
+            "reward": -9.890780272107598,
+            "creation_time": 1689683854.2168844,
+            "auxillary_file_paths": [
+                "results\\Shooter3\\AgentsBehavior\\AgentsBehavior-4948.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu117"
+    }
+}

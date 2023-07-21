@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemySpawner : MonoBehaviour
 {
     public GameObject Enemy;
-    private float spawnRate = 2f;
+    private float spawnRate = 5f;
     private float nextSpawn = 0.0f;
     private Vector3 newPosition;
     private float randomOffset;
@@ -14,10 +14,12 @@ public class enemySpawner : MonoBehaviour
     {
         if (Time.time > nextSpawn)
         {
+            //decreesing the spawnRate, so that enemies spawn more often over time
+            if (spawnRate > 0.6f) { spawnRate = spawnRate - 0.01f; }
             nextSpawn = Time.time + spawnRate;
             float randomOffset = UnityEngine.Random.Range(-17, 17);
             Vector3 newPosition = new Vector3(transform.position.x + randomOffset, transform.position.y, transform.position.z);
-            GameObject enemyInstance = Instantiate(Enemy, newPosition, transform.rotation, transform.parent) as GameObject;
+            Instantiate(Enemy, newPosition, transform.rotation, transform.parent);
         }
     }
 }

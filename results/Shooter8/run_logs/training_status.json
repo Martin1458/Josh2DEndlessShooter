@@ -1,0 +1,29 @@
+{
+    "AgentsBehavior": {
+        "checkpoints": [
+            {
+                "steps": 5401,
+                "file_path": "results\\Shooter8\\AgentsBehavior\\AgentsBehavior-5401.onnx",
+                "reward": -6.584000163078308,
+                "creation_time": 1689945536.8423111,
+                "auxillary_file_paths": [
+                    "results\\Shooter8\\AgentsBehavior\\AgentsBehavior-5401.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5401,
+            "file_path": "results\\Shooter8\\AgentsBehavior.onnx",
+            "reward": -6.584000163078308,
+            "creation_time": 1689945536.8423111,
+            "auxillary_file_paths": [
+                "results\\Shooter8\\AgentsBehavior\\AgentsBehavior-5401.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cu117"
+    }
+}
