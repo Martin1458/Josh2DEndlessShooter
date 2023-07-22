@@ -13,6 +13,8 @@ public class agentController : Agent
     public GameObject bulletObj;
     private float fireRate = 0.5f;
     private float nextFire = 0.0f;
+    private float rewardRate = 0.5f;
+    private float nextReward = 0.0f;
     [SerializeField] private GameObject[] myBullets;
 
     public override void OnEpisodeBegin()
@@ -62,7 +64,7 @@ public class agentController : Agent
 
         if (fire == 1 && Time.time > nextFire)
         {
-            AddReward(-0.1f);
+            AddReward(-0.5f);
             nextFire = Time.time + fireRate;
             GameObject bulletInstance = Instantiate(bulletObj, transform.position, transform.rotation, transform.parent) as GameObject;
             myBullets = myBullets.Append(bulletInstance).ToArray();
@@ -70,17 +72,26 @@ public class agentController : Agent
         myBullets = myBullets.Where(item => item != null).ToArray();
 
     }
+    private void FixedUpdate()
+    {
+        if (Time.time > nextReward)
+        {
+            AddReward(0.25f);
+            nextReward = Time.time + rewardRate;
+            
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Wall")
         {
-            AddReward(-1f);
+            SetReward(-10f);
             EndEpisode();
         }
     }
     public void EnemyWon()
     {
-        AddReward(-10f);
+        AddReward(-20f);
         EndEpisode();
     }
     public void EnemyKilled()
