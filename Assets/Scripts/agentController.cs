@@ -78,7 +78,6 @@ public class agentController : Agent
         {
             AddReward(0.25f);
             nextReward = Time.time + rewardRate;
-            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
