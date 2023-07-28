@@ -64,10 +64,12 @@ public class agentController : Agent
 
         if (fire == 1 && Time.time > nextFire)
         {
-            AddReward(-0.5f);
             nextFire = Time.time + fireRate;
             GameObject bulletInstance = Instantiate(bulletObj, transform.position, transform.rotation, transform.parent) as GameObject;
             myBullets = myBullets.Append(bulletInstance).ToArray();
+        } else if (Time.time > nextFire) 
+        {
+            AddReward(-0.1f);
         }
         myBullets = myBullets.Where(item => item != null).ToArray();
 
@@ -76,7 +78,7 @@ public class agentController : Agent
     {
         if (Time.time > nextReward)
         {
-            AddReward(0.25f);
+            //AddReward(0.25f);
             nextReward = Time.time + rewardRate;
         }
     }

@@ -2,22 +2,22 @@
     "AgentsBehavior": {
         "checkpoints": [
             {
-                "steps": 1125,
-                "file_path": "results\\Test\\AgentsBehavior\\AgentsBehavior-1125.onnx",
-                "reward": -10.417647035682903,
-                "creation_time": 1689609279.0943768,
+                "steps": 20520,
+                "file_path": "results\\test\\AgentsBehavior\\AgentsBehavior-20520.onnx",
+                "reward": null,
+                "creation_time": 1690401459.6582236,
                 "auxillary_file_paths": [
-                    "results\\Test\\AgentsBehavior\\AgentsBehavior-1125.pt"
+                    "results\\test\\AgentsBehavior\\AgentsBehavior-20520.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1125,
-            "file_path": "results\\Test\\AgentsBehavior.onnx",
-            "reward": -10.417647035682903,
-            "creation_time": 1689609279.0943768,
+            "steps": 20520,
+            "file_path": "results\\test\\AgentsBehavior.onnx",
+            "reward": null,
+            "creation_time": 1690401459.6582236,
             "auxillary_file_paths": [
-                "results\\Test\\AgentsBehavior\\AgentsBehavior-1125.pt"
+                "results\\test\\AgentsBehavior\\AgentsBehavior-20520.pt"
             ]
         }
     },
